@@ -18,6 +18,7 @@ public class Game {
             System.out.println("3 - <Mağara Gir>");//TEKRAR DÜZENLE BURAYI!!
             System.out.println("4 - <Ormana Git>");//TEKRAR DÜZENLE BURAYI!
             System.out.println("5 - <Nehire Git>");//TEKRAR DÜZENLE BURAYI!
+            System.out.println("6 - <Madene Git>");
             System.out.println("0 - <Çıkış yap>");//Oyun bitti
             System.out.print("Lütfen gitmek istediğiniz yeri seçiniz : ");
             int selectLoc=input.nextInt();
@@ -39,6 +40,9 @@ public class Game {
                     break;
                 case 5:
                     location=new Riwer(gamer);
+                    break;
+                case 6:
+                    location=new Maden(gamer);
                     break;
                 default:
                     System.out.println("Lütfen geçerli bir ifade giriniz.");
