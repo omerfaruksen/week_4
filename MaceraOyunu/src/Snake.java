@@ -4,7 +4,7 @@ public class Snake extends Obstacle{
     public Snake() {
         super("Yılan", 4, 0, 12, 0);
         Random rnd = new Random();
-        int damageRnd= rnd.nextInt(3,6); //yılan sayısı randm belirlendi.
-        setDamage(damageRnd);
+        int randomDamage= rnd.nextInt(3,6); //Yılanın hasarının random belirlendiği nokta
+        setDamage(randomDamage);
     }
 }
