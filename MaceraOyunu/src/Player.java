@@ -23,7 +23,7 @@ public class Player {
     public void selectChar(){
         GameChar[] charList={new Samurai(),new Knight(),new Archer()};
         System.out.println("///////////////////////////////////KARAKTERLER///////////////////////////////////////////");
-        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------");
         for (GameChar gameChar:charList){
             System.out.println("ID : "+gameChar.getId()+
                     "\t Karakter :" +gameChar.getName()+
@@ -31,7 +31,7 @@ public class Player {
                     "\t Health : "+gameChar.getHealth()+
                     "\t Para : "+gameChar.getMoney()+"$");
         }
-        System.out.println("-----------------------------------------------------------------------------------------");
+        System.out.println("-------------------------------------------------------------------------------------------");
 
         System.out.print("Lütfen bir karakter giriniz : ");
         int selectChar=input.nextInt();
@@ -63,14 +63,14 @@ public class Player {
     }
 
     public void printInfo(){
-        System.out.println("**********************************  "+this.getCharName()+"  ************************************************");
+        System.out.println("*********************************  "+this.getCharName()+"  ***********************************************");
         System.out.println("Silahınız : "+this.getInventory().getWeapon().getName()+
                 "\tZırh : "+this.getInventory().getArmor().getName()+
                 "\tHasarınız : "+ this.getTotalDamage()+
                 "\tBloklama : "+this.getInventory().getArmor().getBlock()+
                 "\tSağlık : "+ this.getHealth()+
                 "\tPara : "+this.getMoney()+"$");
-        System.out.println("*********************************************************************************************");
+        System.out.println("*******************************************************************************************");
     }
 
     public int getTotalDamage(){
