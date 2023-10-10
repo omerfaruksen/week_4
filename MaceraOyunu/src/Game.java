@@ -4,11 +4,11 @@ public class Game {
     private Scanner input= new Scanner(System.in);
     ArrayList<Integer> selectLocation = new ArrayList<>();
     public void start(){
-        System.out.println("Macera Oyununa Hoşgeldiniz !");//DAHA SONRA DÜZENLE!!!
-        System.out.print("Lütfen bir isim giriniz : ");//DAHA SONRA DÜZENLE!!!
+        System.out.println("Macera Oyununa Hoşgeldiniz !");
+        System.out.print("Lütfen bir isim giriniz : ");
         String playerName=input.nextLine();
         Player gamer=new Player(playerName);
-        System.out.println("Adınız :" + gamer.getName() );//DAHA SONRA DÜZENLE!!!
+        System.out.println("Adınız :" + gamer.getName() );
         System.out.println("Lütfen bir karakter seçiniz :");
         gamer.selectChar();
         Location location=null;
@@ -22,11 +22,11 @@ public class Game {
                 break;
             }
             System.out.println("/////////////////////////////////////BÖLGELER/////////////////////////////////////////////");//TEKRAR DÜZENLE BURAYI!!
-            System.out.println("1 - <Güvenli Eve Git>");//TEKRAR DÜZENLE BURAYI!!
-            System.out.println("2 - <Eşya Dükkanına Git>");//TEKRAR DÜZENLE BURAYI!!
-            System.out.println("3 - <Mağara Gir>");//TEKRAR DÜZENLE BURAYI!!
-            System.out.println("4 - <Ormana Git>");//TEKRAR DÜZENLE BURAYI!
-            System.out.println("5 - <Nehire Git>");//TEKRAR DÜZENLE BURAYI!
+            System.out.println("1 - <Güvenli Eve Git>");
+            System.out.println("2 - <Eşya Dükkanına Git>");
+            System.out.println("3 - <Mağara Gir>");
+            System.out.println("4 - <Ormana Git>");
+            System.out.println("5 - <Nehire Git>");
             System.out.println("6 - <Madene Git>");
             System.out.println("0 - <Çıkış yap>");//Oyun bitti
             System.out.print("Lütfen gitmek istediğiniz yeri seçiniz : ");
