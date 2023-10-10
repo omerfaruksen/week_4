@@ -24,10 +24,7 @@ public abstract class BattleLoc extends Location{
         System.out.println("Dikkatli ol Burada "+obsNumber+" tane "+this.getObstacle().getName()+" yaşıyor. ");
         System.out.println("<S>avaş veya <K>aç");
         String selectCase=input.nextLine().toUpperCase();
-        /*if (selectCase.equals("K")){
-            System.out.println("BİZDE GERİ VİTES YOK GAME OVER!");
-            return false;
-        }*/
+
 
             if (selectCase.equals("S") && combat(obsNumber)){
                 System.out.println(this.getName()+" bölgesindeki tüm düşmanları öldürdünüz! ");

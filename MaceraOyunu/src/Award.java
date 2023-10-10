@@ -10,18 +10,7 @@ public class Award {
         this.name = name;
     }
 
-    /*public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public Award(String name, int id) {
-        this.name = name;
-        this.id = id;
-    }*/
 
 
 }
