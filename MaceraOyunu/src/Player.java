@@ -63,14 +63,14 @@ public class Player {
     }
 
     public void printInfo(){
-        System.out.println("********************************  "+this.getCharName()+"  **********************************************");
+        System.out.println("**********************************  "+this.getCharName()+"  ************************************************");
         System.out.println("Silahınız : "+this.getInventory().getWeapon().getName()+
                 "\tZırh : "+this.getInventory().getArmor().getName()+
                 "\tHasarınız : "+ this.getTotalDamage()+
                 "\tBloklama : "+this.getInventory().getArmor().getBlock()+
                 "\tSağlık : "+ this.getHealth()+
                 "\tPara : "+this.getMoney()+"$");
-        System.out.println("*****************************************************************************************");
+        System.out.println("*********************************************************************************************");
     }
 
     public int getTotalDamage(){

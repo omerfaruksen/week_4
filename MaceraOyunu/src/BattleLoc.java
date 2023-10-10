@@ -1,4 +1,5 @@
 import javax.sound.midi.spi.SoundbankReader;
+import java.sql.SQLOutput;
 import java.util.Random;
 
 public abstract class BattleLoc extends Location{
@@ -23,33 +24,28 @@ public abstract class BattleLoc extends Location{
         System.out.println("Dikkatli ol Burada "+obsNumber+" tane "+this.getObstacle().getName()+" yaşıyor. ");
         System.out.println("<S>avaş veya <K>aç");
         String selectCase=input.nextLine().toUpperCase();
-        if (selectCase.equals("K")){
+        /*if (selectCase.equals("K")){
             System.out.println("BİZDE GERİ VİTES YOK GAME OVER!");
             return false;
-        }
+        }*/
 
             if (selectCase.equals("S") && combat(obsNumber)){
                 System.out.println(this.getName()+" bölgesindeki tüm düşmanları öldürdünüz! ");
                 if (this.locName == "Mağara") {
-                    this.getPlayer().getInventory().SetAward(1);
+                    this.getPlayer().getInventory().setFood(true);
                     System.out.println("YEMEK KAZANDINIZ!");
                 }
                 if (this.locName == "Orman") {
-                    this.getPlayer().getInventory().SetAward(2);
+                    this.getPlayer().getInventory().setFirewood(true);
                     System.out.println("ODUN KAZANDINIZ!");
                 }
                 if (this.locName == "Nehir") {
-                    this.getPlayer().getInventory().SetAward(3);
+                    this.getPlayer().getInventory().setWater(true);
                     System.out.println("SU KAZANDINIZ!");
                 }
 
                 return true;
             }
-        if (this.getPlayer().getInventory().getAwards().length==2){
-            System.out.println("**********************************************************************************");
-            System.out.println("************************TEBRİKLER OYUNU KAZANDINIZ!!******************************");
-            System.out.println("**********************************************************************************");
-        }
 
         if (this.getPlayer().getHealth()<=0){
             System.out.println("GAME OVER!");
@@ -64,6 +60,7 @@ public abstract class BattleLoc extends Location{
             this.getObstacle().setHealth(this.getObstacle().getOriginalHealth());
             gamerStats();
             obstacleStats(i);
+
             while (this.getPlayer().getHealth()>0 && this.getObstacle().getHealth()>0){
 
                 System.out.print("<V>ur veya <K>aç : ");
@@ -109,6 +106,7 @@ public abstract class BattleLoc extends Location{
                 System.out.println(this.getObstacle().getAward()+" $ kazandınız!");
                 this.getPlayer().setMoney(this.getPlayer().getMoney()+getObstacle().getAward());
                 System.out.println("Güncel Bakiye : "+this.getPlayer().getMoney()+"$");
+
             }else {
                 return false;
             }
