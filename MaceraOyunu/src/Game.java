@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Game {
     private Scanner input= new Scanner(System.in);
-    ArrayList<Integer> selectLocation = new ArrayList<>();
     public void start(){
         System.out.println("Macera Oyununa Hoşgeldiniz !");
         System.out.print("Lütfen bir isim giriniz : ");
