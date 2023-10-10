@@ -1,6 +1,8 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 public class Game {
     private Scanner input= new Scanner(System.in);
+    ArrayList<Integer> selectLocation = new ArrayList<>();
     public void start(){
         System.out.println("Macera Oyununa Hoşgeldiniz !");//DAHA SONRA DÜZENLE!!!
         System.out.print("Lütfen bir isim giriniz : ");//DAHA SONRA DÜZENLE!!!
@@ -12,7 +14,7 @@ public class Game {
         Location location=null;
         while (true) {
             gamer.printInfo();
-            System.out.println("////////////////////////////////////Bölgeler//////////////////////////////////// ");//TEKRAR DÜZENLE BURAYI!!
+            System.out.println("/////////////////////////////////////BÖLGELER/////////////////////////////////////////////");//TEKRAR DÜZENLE BURAYI!!
             System.out.println("1 - <Güvenli Eve Git>");//TEKRAR DÜZENLE BURAYI!!
             System.out.println("2 - <Eşya Dükkanına Git>");//TEKRAR DÜZENLE BURAYI!!
             System.out.println("3 - <Mağara Gir>");//TEKRAR DÜZENLE BURAYI!!
@@ -22,6 +24,12 @@ public class Game {
             System.out.println("0 - <Çıkış yap>");//Oyun bitti
             System.out.print("Lütfen gitmek istediğiniz yeri seçiniz : ");
             int selectLoc=input.nextInt();
+            if (selectLoc!=1 && selectLoc!=2 && selectLoc!=6 && selectLocation.contains(selectLoc)) {
+                System.out.println("Bu Bölümü Geçtiniz!");
+                continue;
+            } else {
+                selectLocation.add(selectLoc);
+            }
             switch (selectLoc){
                 case 0:
                     location=null;
@@ -33,9 +41,11 @@ public class Game {
                     location=new ToolStore(gamer);
                     break;
                 case 3:
+
                     location=new Cave(gamer);
                     break;
                 case 4:
+                    
                     location=new Forest(gamer);
                     break;
                 case 5:
@@ -53,7 +63,7 @@ public class Game {
                 break;
             }
             if (!location.onLocation()){
-                System.out.println("Öldünüz.");
+                //System.out.println("Öldünüz.");
                 break;
             }
         }

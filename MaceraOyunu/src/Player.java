@@ -11,6 +11,7 @@ public class Player {
     private String charName;
     private Inventory inventory;
     private int originalHealth;
+    private String  avard;
     private Scanner input= new Scanner(System.in);
 
 
@@ -28,7 +29,7 @@ public class Player {
                     "\t Karakter :" +gameChar.getName()+
                     "\t Hasar : "+gameChar.getDamage()+
                     "\t Health : "+gameChar.getHealth()+
-                    "\t Para : "+gameChar.getMoney());
+                    "\t Para : "+gameChar.getMoney()+"$");
         }
         System.out.println("-----------------------------------------------------------------------------------------");
 
@@ -48,9 +49,9 @@ public class Player {
                 initGamer(new Samurai());
         }
         System.out.println("Karakter : "+this.getCharName()+//TEKRAR DÜZENLE BURAYI !!!
-                "Hasar" +this.getDamage()+
-                "Salık"+this.getDamage()+
-                "Para "+this.getMoney());
+                "\tHasar : " +this.getDamage()+
+                "\tSalık : "+this.getDamage()+
+                "\tPara  : "+this.getMoney()+"$");
     }
 
     public void initGamer(GameChar gameChar){
@@ -68,7 +69,7 @@ public class Player {
                 "\tHasarınız : "+ this.getTotalDamage()+
                 "\tBloklama : "+this.getInventory().getArmor().getBlock()+
                 "\tSağlık : "+ this.getHealth()+
-                "\tPara : "+this.getMoney());
+                "\tPara : "+this.getMoney()+"$");
         System.out.println("*****************************************************************************************");
     }
 
@@ -136,4 +137,5 @@ public class Player {
     public void setOriginalHealth(int originalHealth) {
         this.originalHealth = originalHealth;
     }
+
 }
